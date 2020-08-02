@@ -1,0 +1,26 @@
+{
+  "name": "triib-scrape",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Karl Swedberg <kswedberg@gmail.com> (https://karlswedberg.com/)",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^4.1.0",
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.2.0",
+    "fmjs": "^5.10.1",
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.3",
+    "json2csv": "^5.0.1",
+    "minimist": "^1.2.5",
+    "puppeteer": "^5.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-kswedberg": "^4.1.1"
+  }
+}
