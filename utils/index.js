@@ -57,4 +57,14 @@ const setCookies = async(page) => {
   await page.setCookie(cookies[0]);
 };
 
-module.exports = {delay, getData, getDataPath, getCookiesPath, setCookies};
+const csvColumns = [
+  'athlete',
+  'date',
+  'workoutTitle',
+  'isRx',
+  'result',
+  'setRepScheme',
+  'notes',
+];
+
+module.exports = {delay, csvColumns, getData, getDataPath, getCookiesPath, setCookies};
