@@ -4,7 +4,7 @@
 
 If you are a gym owner, and you're using [Triib](https://triib.com/) to manage membership, workouts, etc., you can get all your members' workout data off of the site with one simple command: `yarn start`. You'll be prompted for additional information about the task you want to perform and the member group you want to perform it for. Then you'll wait while the script scrapes Triib's admin pages. Repeat for each member group you're interested in and then move onto the next task. By the end you'll have all your members' information in a nice CSV file that you can open in Excel or something.
 
-Feel free to skip to the Prerequisites section below if you want to dig in right away.
+Feel free to skip to the [Prerequisites](#prerequisites) section below if you want to dig in right away.
 
 ## Back Story
 
