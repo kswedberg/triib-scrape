@@ -93,4 +93,4 @@ The last two prompts are there because sometimes you need to stop a task (e.g. F
 
 ## Questions, bugs, requests
 
-Feel free to post an issue if you have any questions or concerns about this insane project.
+Feel free to [post an issue](https://github.com/kswedberg/triib-scrape/issues) if you have any questions or concerns about this insane project.
