@@ -7,7 +7,7 @@ const {getScores} = require('../lib/get-scores.js');
 const {prepForCSV} = require('../lib/prep-for-csv.js');
 const {createCSV} = require('../lib/create-csv.js');
 const {combineCSV, getCSVFiles} = require('../lib/combine-csv.js');
-
+const {prepForMongo} = require('../lib/prep-for-mongo.js');
 const tasks = [
   {
     name: 'Fetch Members',
@@ -63,6 +63,12 @@ const getTasks = async() => {
       short: 'csv',
       fn: combineCSV,
     },
+    {
+      name: 'Prepare scores data for MongoDB',
+      value: 'prepForMongo',
+      short: 'mongo-ready',
+      fn: prepForMongo,
+    },
   ];
 };
 
@@ -71,6 +77,9 @@ const getDataDirs = (task) => {
     return {input: 'csv', output: 'csv'};
   }
 
+  if (task.value === 'prepForMongo') {
+    return {input: 'scores', output: 'mongo'};
+  }
   const index = tasks.findIndex(({value}) => task.value === value);
 
   return {
@@ -80,7 +89,7 @@ const getDataDirs = (task) => {
 };
 const getPossibleMemberTypes = async(task) => {
 
-  if (/getMembers|combineCSV/.test(task.value)) {
+  if (/getMembers|combineCSV|prepForMongo/.test(task.value)) {
     return memberTypes;
   }
 
@@ -121,6 +130,7 @@ const getPrompts = (task, memberTypes) => {
       type: 'checkbox',
       message: 'which member type(s) are we dealing with?',
       choices: memberTypes,
+      default: task.value === 'prepForMongo' ? memberTypes : [],
       when() {
         return !fetchingTasks.includes(task.value);
       },

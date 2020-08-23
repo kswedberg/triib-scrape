@@ -46,7 +46,7 @@ const start = async() => {
     task.fn = data.memberType === 'active' ? getActiveMembers : getOtherMembers;
   }
 
-  if (data.memberTypes) {
+  if (data.memberTypes && task.value !== 'prepForMongo') {
     await peach(data.memberTypes, (memberType) => {
       const mtData = Object.assign({}, data, {memberType});
 
