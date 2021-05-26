@@ -18,7 +18,7 @@ I didn't have direct access to the database, of course, so I needed to get at th
 
 ## Data Extraction Steps
 
-Because our gym has had _a lot_ of members over the years, and those members have recorded _a lot_ or workouts, getting all of the information was going to be a slow process, involving over 100,000 requests to Triib's server. As much I didn't appreciate their lack of help, I didn't feel it would be right to bring the server to its knees. So, within each step, the requests are made one at a time. Here is what we do:
+Because our gym has had _a lot_ of members over the years, and those members have recorded _a lot_ of workouts, getting all of the information was going to be a slow process, involving over 100,000 requests to Triib's server. As much as I didn't appreciate their lack of help, I didn't feel it would be right to bring the server to its knees. So, within each step, the requests are made one at a time. Here is what we do:
 
 1. Scrape the active members page for name, email, and link to workout history. When that is done, scrape the "other members" page for inactive members. Then do the same for "on-hold" and "archived" members. When that is done, we have a directory for each member status, and in those directories a JSON file for each member.
 2. For each member status, run a task that opens all the workout pages for each member. Add an array of workouts to the member file, along with the result details page for each one and save it into a new JSON file along with the member info.
